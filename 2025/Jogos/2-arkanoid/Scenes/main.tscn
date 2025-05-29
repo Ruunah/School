@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://dg5re336q0ouf"]
+
+[ext_resource type="Texture2D" uid="uid://bj1v1bifnk3sg" path="res://Sprites/Sky.png" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://c0btxky58rnjr" path="res://Scripts/spawner.gd" id="1_kry3j"]
+[ext_resource type="PackedScene" uid="uid://c1h6oqs24uyak" path="res://Prefab/player.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://c7ehkvdjcx6rd" path="res://Prefab/bola.tscn" id="3_8gbba"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bo1nx"]
+size = Vector2(1168, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gbba"]
+size = Vector2(16, 664)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjvhh"]
+size = Vector2(16, 664)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kry3j"]
+size = Vector2(1168, 16)
+
+[node name="Main" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_kry3j")
+
+[node name="wall" type="StaticBody2D" parent="Control"]
+
+[node name="top" type="CollisionShape2D" parent="Control/wall"]
+position = Vector2(576, 0)
+shape = SubResource("RectangleShape2D_bo1nx")
+
+[node name="left" type="CollisionShape2D" parent="Control/wall"]
+position = Vector2(1152, 324)
+shape = SubResource("RectangleShape2D_8gbba")
+
+[node name="right" type="CollisionShape2D" parent="Control/wall"]
+position = Vector2(0, 324)
+shape = SubResource("RectangleShape2D_jjvhh")
+
+[node name="bad" type="StaticBody2D" parent="Control"]
+
+[node name="Collider" type="CollisionShape2D" parent="Control/bad"]
+position = Vector2(576, 648)
+shape = SubResource("RectangleShape2D_kry3j")
+
+[node name="Sky" type="Sprite2D" parent="Control"]
+position = Vector2(576, 324)
+scale = Vector2(0.5625, 0.316406)
+texture = ExtResource("1_jjgbg")
+
+[node name="Timer" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 32.0
+offset_right = 704.0
+offset_bottom = 96.0
+theme_override_font_sizes/normal_font_size = 46
+text = "0"
+autowrap_mode = 0
+horizontal_alignment = 1
+
+[node name="Bola" parent="." instance=ExtResource("3_8gbba")]
+position = Vector2(576, 488)
+
+[node name="Player" parent="." instance=ExtResource("2_bo1nx")]
+position = Vector2(576, 512)

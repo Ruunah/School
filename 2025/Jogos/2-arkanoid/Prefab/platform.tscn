@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://sh3eg2u3pc82"]
+
+[ext_resource type="Script" uid="uid://d4g2md8173rka" path="res://Scripts/platform.gd" id="1_bwo56"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f216w"]
+size = Vector2(128, 32)
+
+[node name="Plataform" type="CharacterBody2D" groups=["Platform"]]
+script = ExtResource("1_bwo56")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_f216w")
+
+[node name="Color" type="ColorRect" parent="."]
+offset_left = -64.0
+offset_top = -16.0
+offset_right = 64.0
+offset_bottom = 16.0

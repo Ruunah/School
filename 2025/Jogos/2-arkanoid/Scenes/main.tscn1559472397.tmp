@@ -1,0 +1,78 @@
+[gd_scene load_steps=10 format=3 uid="uid://dg5re336q0ouf"]
+
+[ext_resource type="Texture2D" uid="uid://bj1v1bifnk3sg" path="res://Sprites/Sky.png" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://c0btxky58rnjr" path="res://Scripts/spawner.gd" id="1_kry3j"]
+[ext_resource type="PackedScene" uid="uid://c1h6oqs24uyak" path="res://Prefab/player.tscn" id="2_bo1nx"]
+[ext_resource type="PackedScene" uid="uid://c7ehkvdjcx6rd" path="res://Prefab/bola.tscn" id="3_8gbba"]
+[ext_resource type="PackedScene" uid="uid://sh3eg2u3pc82" path="res://Prefab/plataform.tscn" id="5_21xkr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bo1nx"]
+size = Vector2(1168, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gbba"]
+size = Vector2(16, 664)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjvhh"]
+size = Vector2(16, 664)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kry3j"]
+size = Vector2(1168, 16)
+
+[node name="Main" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_kry3j")
+
+[node name="wall" type="StaticBody2D" parent="Control"]
+
+[node name="top" type="CollisionShape2D" parent="Control/wall"]
+position = Vector2(576, 0)
+shape = SubResource("RectangleShape2D_bo1nx")
+
+[node name="left" type="CollisionShape2D" parent="Control/wall"]
+position = Vector2(1152, 324)
+shape = SubResource("RectangleShape2D_8gbba")
+
+[node name="right" type="CollisionShape2D" parent="Control/wall"]
+position = Vector2(0, 324)
+shape = SubResource("RectangleShape2D_jjvhh")
+
+[node name="bad" type="StaticBody2D" parent="Control"]
+
+[node name="Collider" type="CollisionShape2D" parent="Control/bad"]
+position = Vector2(576, 648)
+shape = SubResource("RectangleShape2D_kry3j")
+
+[node name="Sky" type="Sprite2D" parent="Control"]
+position = Vector2(576, 324)
+scale = Vector2(0.5625, 0.316406)
+texture = ExtResource("1_jjgbg")
+
+[node name="Player" parent="." instance=ExtResource("2_bo1nx")]
+position = Vector2(576, 512)
+
+[node name="Bola" parent="." instance=ExtResource("3_8gbba")]
+position = Vector2(584, 456)
+
+[node name="Plataform" parent="." instance=ExtResource("5_21xkr")]
+position = Vector2(96, 48)
+
+[node name="Plataform2" parent="." instance=ExtResource("5_21xkr")]
+position = Vector2(96, 104)
+
+[node name="Plataform3" parent="." instance=ExtResource("5_21xkr")]
+position = Vector2(96, 160)
+
+[node name="Plataform4" parent="." instance=ExtResource("5_21xkr")]
+position = Vector2(96, 224)
+
+[node name="Plataform5" parent="." instance=ExtResource("5_21xkr")]
+position = Vector2(96, 264)
+
+[node name="Plataform6" parent="." instance=ExtResource("5_21xkr")]
+position = Vector2(896, 48)
+
+[node name="Plataform7" parent="." instance=ExtResource("5_21xkr")]
+position = Vector2(1056, 48)
