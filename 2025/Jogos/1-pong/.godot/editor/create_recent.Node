@@ -1,0 +1,6 @@
+StaticBody2D
+RichTextLabel
+ColorRect
+CollisionShape2D
+CharacterBody2D
+Control

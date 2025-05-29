@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://4bsms7lwse4g"]
+
+[ext_resource type="Script" uid="uid://qfmdlvw71t3j" path="res://Scripts/bola.gd" id="1_ts8wt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfdao"]
+size = Vector2(8, 8)
+
+[node name="bola" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_ts8wt")
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nfdao")
+
+[node name="Color" type="ColorRect" parent="."]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
