@@ -1,9 +1,1 @@
 res://Scenes/main.tscn
-res://Prefab/player.tscn
-res://Scripts/player.gd
-res://Prefab/bola.tscn
-res://Scripts/bola.gd
-res://Prefab/plataform.tscn
-res://Scripts/spawner.gd
-res://Prefab/platform.tscn
-res://Scripts/platform.gd

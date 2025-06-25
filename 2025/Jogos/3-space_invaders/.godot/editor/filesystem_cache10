@@ -1,0 +1,14 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1750851240
+icon.svg::CompressedTexture2D::107289335873416949::1750850948::1750850955::1::::<><><>0<>0<>29cac8e98c420611a44cf445d6ed9d73<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://Prefabs/::1750851122
+player.tscn::PackedScene::1436051626932779400::1750851122::0::1::::<><><>0<>0<><>::
+::res://Scenes/::1750851026
+main.tscn::PackedScene::2222386625846733351::1750851026::0::1::::<><><>0<>0<><>::
+::res://Scripts/::1750851042
+::res://Sprites/::1750852267
+bullet_blue.png::CompressedTexture2D::7776066704281657706::1750852163::1750852271::1::::<><><>0<>0<>bf18566c72189c215664d24fb7e0aa08<>res://.godot/imported/bullet_blue.png-3a91e872dad0cd4011a9b9c40f80cb40.ctex::
+bullet_red.png::CompressedTexture2D::7939598770480038953::1750852247::1750852271::1::::<><><>0<>0<>e341f9c31b10f8f2e71c8da9454a313c<>res://.godot/imported/bullet_red.png-a7fadb3c42b12afd0f097f876342cbef.ctex::
+ship_blue.png::CompressedTexture2D::4518693451240236689::1750851617::1750852271::1::::<><><>0<>0<>390c0b4479611f61afbf275dc39a8ae8<>res://.godot/imported/ship_blue.png-29c774a5d3e68451623a8fa6b456de49.ctex::
+ship_red.png::CompressedTexture2D::2788265195392502225::1750851618::1750852271::1::::<><><>0<>0<>2662523230108fc761354ee710c90b63<>res://.godot/imported/ship_red.png-490978d814d48f56f80a6b034c7030f3.ctex::
+skybox.png::CompressedTexture2D::5034666083380685945::1750851183::1750851247::1::::<><><>0<>0<>a17f303e6cbbee9986d1a9362ee474f6<>res://.godot/imported/skybox.png-7429398e9e1b50bd9fdbf66e7ed70de6.ctex::

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp3kdokd2ou0a"]
+
+[ext_resource type="Texture2D" uid="uid://bfywk5m5w7odt" path="res://Sprites/ship_red.png" id="1_leowk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgw76"]
+size = Vector2(32, 40)
+
+[node name="Enemy" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_lgw76")
+
+[node name="ShipRed" type="Sprite2D" parent="." groups=["Enemy"]]
+position = Vector2(6.55651e-07, 0)
+scale = Vector2(0.941176, 1)
+texture = ExtResource("1_leowk")

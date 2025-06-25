@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddlns2i2mbmx8"]
+
+[ext_resource type="Texture2D" uid="uid://di11xg83wok23" path="res://Sprites/bullet_blue.png" id="1_b2i4w"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ra23g"]
+radius = 8.0
+height = 16.0
+
+[node name="P_Bullet" type="CharacterBody2D"]
+
+[node name="BulletBlue" type="Sprite2D" parent="."]
+position = Vector2(0, 7.15256e-07)
+scale = Vector2(0.842105, 1.04348)
+texture = ExtResource("1_b2i4w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 1)
+shape = SubResource("CapsuleShape2D_ra23g")

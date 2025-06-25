@@ -1,0 +1,5 @@
+res://Prefabs/player.tscn
+res://Scenes/main.tscn
+res://Prefabs/enemy.tscn
+res://Prefabs/e_bullet.tscn
+res://Prefabs/p_bullet.tscn

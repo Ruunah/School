@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://6wsna1yykvad"]
+
+[ext_resource type="Script" uid="uid://by3ms3ycqcln1" path="res://spawner.gd" id="1_bo1nx"]
+[ext_resource type="Texture2D" uid="uid://cdy3hkli3xbyn" path="res://Sprites/skybox.png" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://upvtb6lmvhc7" path="res://Prefabs/player.tscn" id="3_8gbba"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bo1nx"]
+size = Vector2(16, 664)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gbba"]
+size = Vector2(16, 664)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjvhh"]
+size = Vector2(1168, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kry3j"]
+size = Vector2(1168, 16)
+
+[node name="Main" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_bo1nx")
+
+[node name="Walls" type="StaticBody2D" parent="Control"]
+
+[node name="Left" type="CollisionShape2D" parent="Control/Walls"]
+position = Vector2(0, 324)
+shape = SubResource("RectangleShape2D_bo1nx")
+
+[node name="Right" type="CollisionShape2D" parent="Control/Walls"]
+position = Vector2(1152, 324)
+shape = SubResource("RectangleShape2D_8gbba")
+
+[node name="BWall" type="StaticBody2D" parent="Control"]
+
+[node name="Floor" type="CollisionShape2D" parent="Control/BWall"]
+position = Vector2(576, 648)
+shape = SubResource("RectangleShape2D_jjvhh")
+
+[node name="Ceeling" type="CollisionShape2D" parent="Control/BWall"]
+position = Vector2(576, 0)
+shape = SubResource("RectangleShape2D_kry3j")
+
+[node name="Skybox" type="Sprite2D" parent="Control"]
+position = Vector2(576, 324)
+scale = Vector2(0.5625, 0.316406)
+texture = ExtResource("1_jjgbg")
+
+[node name="Player" parent="." instance=ExtResource("3_8gbba")]
+position = Vector2(576, 512)
