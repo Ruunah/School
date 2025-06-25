@@ -1,14 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bb5l5tv8eo6ow"]
+[gd_scene load_steps=4 format=3 uid="uid://bb5l5tv8eo6ow"]
 
 [ext_resource type="Texture2D" uid="uid://dleabcyj56bx6" path="res://Sprites/bullet_red.png" id="1_khqqb"]
+[ext_resource type="Script" uid="uid://g2s8hhcs1vua" path="res://Scripts/e_bullet.gd" id="1_l3gkh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ra23g"]
 radius = 8.0
 height = 16.0
 
-[node name="E_Bullet" type="CharacterBody2D"]
+[node name="E_Bullet" type="CharacterBody2D" groups=["Enemy"]]
+script = ExtResource("1_l3gkh")
 
-[node name="BulletRed" type="Sprite2D" parent="." groups=["Enemy"]]
+[node name="BulletRed" type="Sprite2D" parent="."]
 scale = Vector2(0.8, 0.923077)
 texture = ExtResource("1_khqqb")
 

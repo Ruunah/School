@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://upvtb6lmvhc7"]
+[gd_scene load_steps=4 format=3 uid="uid://upvtb6lmvhc7"]
 
+[ext_resource type="Script" uid="uid://df7jumm844ywx" path="res://Scripts/player.gd" id="1_5wxv7"]
 [ext_resource type="Texture2D" uid="uid://b5m5hrok3323n" path="res://Sprites/ship_blue.png" id="1_y6xdh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y6xdh"]
 size = Vector2(32, 40)
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_5wxv7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)

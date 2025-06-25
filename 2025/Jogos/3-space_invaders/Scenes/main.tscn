@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://6wsna1yykvad"]
 
-[ext_resource type="Script" uid="uid://by3ms3ycqcln1" path="res://spawner.gd" id="1_bo1nx"]
+[ext_resource type="Script" uid="uid://by3ms3ycqcln1" path="res://Scripts/spawner.gd" id="1_bo1nx"]
 [ext_resource type="Texture2D" uid="uid://cdy3hkli3xbyn" path="res://Sprites/skybox.png" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://upvtb6lmvhc7" path="res://Prefabs/player.tscn" id="3_8gbba"]
 
