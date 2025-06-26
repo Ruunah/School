@@ -10,10 +10,13 @@ size = Vector2(32, 40)
 script = ExtResource("1_5wxv7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_y6xdh")
 
 [node name="ShipBlue" type="Sprite2D" parent="."]
 position = Vector2(6.55651e-07, 0)
 scale = Vector2(0.941176, 1)
 texture = ExtResource("1_y6xdh")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true

@@ -1,5 +1,8 @@
-res://Prefabs/player.tscn
 res://Scenes/main.tscn
+res://Scripts/player.gd
+res://Prefabs/p_bullet.tscn
+res://Scripts/p_bullet.gd
+res://Prefabs/player.tscn
 res://Prefabs/enemy.tscn
 res://Prefabs/e_bullet.tscn
-res://Prefabs/p_bullet.tscn
+res://Scripts/enemy.gd
