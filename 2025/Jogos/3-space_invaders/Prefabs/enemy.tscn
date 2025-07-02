@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dp3kdokd2ou0a"]
+[gd_scene load_steps=9 format=3 uid="uid://dp3kdokd2ou0a"]
 
 [ext_resource type="Texture2D" uid="uid://bfywk5m5w7odt" path="res://Sprites/ship_red.png" id="1_leowk"]
 [ext_resource type="Script" uid="uid://tej3gyyv4g4p" path="res://Scripts/enemy.gd" id="2_lgw76"]
@@ -9,6 +9,7 @@ size = Vector2(32, 40)
 
 [sub_resource type="Animation" id="Animation_30yes"]
 resource_name = "Explosion"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -16,7 +17,7 @@ tracks/0/path = NodePath("Explosion:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1429, 0.2857, 0.4286, 0.5714, 0.7143, 0.8571),
+"times": PackedFloat32Array(0, 0.0715, 0.1429, 0.2144, 0.2857, 0.3573, 0.4286),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6]
@@ -33,9 +34,36 @@ tracks/1/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Explosion:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_t4g6b"]
 resource_name = "Idle"
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -61,15 +89,20 @@ tracks/1/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_n7q57"]
+length = 0.001
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n7q57"]
 _data = {
 &"Explosion": SubResource("Animation_30yes"),
-&"Idle": SubResource("Animation_t4g6b")
+&"Idle": SubResource("Animation_t4g6b"),
+&"RESET": SubResource("Animation_n7q57")
 }
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 collision_layer = 2
 collision_mask = 2
+motion_mode = 1
 script = ExtResource("2_lgw76")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -92,3 +125,7 @@ hframes = 7
 libraries = {
 &"": SubResource("AnimationLibrary_n7q57")
 }
+autoplay = "Idle"
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

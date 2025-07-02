@@ -8,6 +8,8 @@ radius = 8.0
 height = 16.0
 
 [node name="E_Bullet" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 5
+motion_mode = 1
 script = ExtResource("1_l3gkh")
 
 [node name="BulletRed" type="Sprite2D" parent="."]

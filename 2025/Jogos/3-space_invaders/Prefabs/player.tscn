@@ -1,12 +1,103 @@
-[gd_scene load_steps=4 format=3 uid="uid://upvtb6lmvhc7"]
+[gd_scene load_steps=8 format=3 uid="uid://upvtb6lmvhc7"]
 
 [ext_resource type="Script" uid="uid://df7jumm844ywx" path="res://Scripts/player.gd" id="1_5wxv7"]
 [ext_resource type="Texture2D" uid="uid://b5m5hrok3323n" path="res://Sprites/ship_blue.png" id="1_y6xdh"]
+[ext_resource type="Texture2D" uid="uid://dnjxyj2dx7mpm" path="res://Sprites/explosion.png" id="3_y5hcb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y6xdh"]
 size = Vector2(32, 40)
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="Animation" id="Animation_knrd4"]
+resource_name = "Death"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Explosion:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0715, 0.1429, 0.2144, 0.2857, 0.3573, 0.4286),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Explosion:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ShipBlue:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_y5hcb"]
+resource_name = "Idle"
+length = 0.001
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Explosion:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ShipBlue:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_knrd4"]
+_data = {
+&"Death": SubResource("Animation_knrd4"),
+&"Idle": SubResource("Animation_y5hcb")
+}
+
+[node name="Player" type="CharacterBody2D" groups=["fren"]]
+motion_mode = 1
 script = ExtResource("1_5wxv7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -20,3 +111,16 @@ texture = ExtResource("1_y6xdh")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.25
 one_shot = true
+
+[node name="Explosion" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-7.15256e-07, 9.53674e-07)
+scale = Vector2(0.969697, 1)
+texture = ExtResource("3_y5hcb")
+hframes = 7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_knrd4")
+}
+autoplay = "Idle"

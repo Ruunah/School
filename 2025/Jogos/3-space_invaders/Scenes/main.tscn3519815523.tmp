@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://6wsna1yykvad"]
+[gd_scene load_steps=11 format=3 uid="uid://6wsna1yykvad"]
 
 [ext_resource type="Script" uid="uid://by3ms3ycqcln1" path="res://Scripts/spawner.gd" id="1_bo1nx"]
 [ext_resource type="Texture2D" uid="uid://cdy3hkli3xbyn" path="res://Sprites/skybox.png" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://upvtb6lmvhc7" path="res://Prefabs/player.tscn" id="3_8gbba"]
 [ext_resource type="Texture2D" uid="uid://bona6vw6ipc0y" path="res://Sprites/heart.png" id="3_21xkr"]
+[ext_resource type="PackedScene" uid="uid://dp3kdokd2ou0a" path="res://Prefabs/enemy.tscn" id="4_jjvhh"]
+[ext_resource type="PackedScene" uid="uid://bb5l5tv8eo6ow" path="res://Prefabs/e_bullet.tscn" id="5_kry3j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kry3j"]
 size = Vector2(1168, 16)
@@ -56,6 +58,13 @@ position = Vector2(80, 36)
 scale = Vector2(0.853333, 0.615385)
 texture = ExtResource("3_21xkr")
 vframes = 6
+frame = 4
 
 [node name="Player" parent="." instance=ExtResource("3_8gbba")]
 position = Vector2(576, 512)
+
+[node name="Enemy" parent="." instance=ExtResource("4_jjvhh")]
+position = Vector2(552, 240)
+
+[node name="E_Bullet" parent="." instance=ExtResource("5_kry3j")]
+position = Vector2(576, 324)
