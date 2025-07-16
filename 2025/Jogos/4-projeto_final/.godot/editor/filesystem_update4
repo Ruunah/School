@@ -1,0 +1,4 @@
+res://Scenes/main.tscn
+res://Prefabs/player.tscn
+res://player.gd
+res://Scripts/player.gd

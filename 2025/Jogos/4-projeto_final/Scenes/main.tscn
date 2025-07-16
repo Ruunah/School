@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://lhvgmsb2nyi7"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Bg" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.00392157, 0.0862745, 0.152941, 1)
+
+[node name="Buttons" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="exit" type="ColorRect" parent="Buttons"]
+offset_left = 480.0
+offset_top = 512.0
+offset_right = 672.0
+offset_bottom = 576.0
+
+[node name="settings" type="ColorRect" parent="Buttons"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 424.0
+offset_right = 704.0
+offset_bottom = 488.0
+
+[node name="play" type="ColorRect" parent="Buttons"]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 336.0
+offset_right = 672.0
+offset_bottom = 400.0

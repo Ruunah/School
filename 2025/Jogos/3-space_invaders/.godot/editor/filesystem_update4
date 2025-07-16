@@ -1,4 +1,2 @@
 res://Scenes/main.tscn
-res://Scripts/spawner.gd
-res://Prefabs/player.tscn
-res://Prefabs/enemy.tscn
+res://Scripts/e_bullet.gd
