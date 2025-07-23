@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cv6iddgdgi0c5"]
+
+[ext_resource type="PackedScene" uid="uid://csejmfx82545y" path="res://Prefabs/player.tscn" id="1_jjgbg"]
+
+[node name="main" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_jjgbg")]
+position = Vector2(192, 320)
+motion_mode = 1
+slide_on_ceiling = false
