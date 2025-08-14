@@ -164,6 +164,9 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 0
+motion_mode = 1
 platform_floor_layers = 4294967040
 script = ExtResource("1_5wxv7")
 
@@ -171,7 +174,6 @@ script = ExtResource("1_5wxv7")
 texture = ExtResource("1_y6xdh")
 hframes = 4
 vframes = 2
-frame = 4
 
 [node name="Colision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_5wxv7")

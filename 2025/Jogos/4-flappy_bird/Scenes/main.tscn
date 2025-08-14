@@ -1,10 +1,51 @@
-[gd_scene load_steps=2 format=3 uid="uid://cv6iddgdgi0c5"]
+[gd_scene load_steps=6 format=3 uid="uid://cv6iddgdgi0c5"]
 
 [ext_resource type="PackedScene" uid="uid://csejmfx82545y" path="res://Prefabs/player.tscn" id="1_jjgbg"]
+[ext_resource type="Script" uid="uid://bb4h5ifjl6b0e" path="res://Scripts/spawner.gd" id="3_8gbba"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bo1nx"]
+size = Vector2(1160, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8gbba"]
+size = Vector2(1168, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jjvhh"]
+size = Vector2(16, 666)
 
 [node name="main" type="Node2D"]
 
+[node name="Spawner" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1216.0
+offset_top = 320.0
+offset_right = 1216.0
+offset_bottom = 320.0
+script = ExtResource("3_8gbba")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Death_Barrier" type="CharacterBody2D" parent="."]
+
+[node name="Top" type="CollisionShape2D" parent="Death_Barrier"]
+position = Vector2(572, 0)
+shape = SubResource("RectangleShape2D_bo1nx")
+
+[node name="Bottom" type="CollisionShape2D" parent="Death_Barrier"]
+position = Vector2(576, 648)
+shape = SubResource("RectangleShape2D_8gbba")
+
+[node name="Back" type="CharacterBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="Back" type="CollisionShape2D" parent="Back"]
+position = Vector2(-240, 328)
+shape = SubResource("RectangleShape2D_jjvhh")
+
 [node name="Player" parent="." instance=ExtResource("1_jjgbg")]
 position = Vector2(192, 320)
-motion_mode = 1
+collision_layer = 1
+collision_mask = 1
 slide_on_ceiling = false
