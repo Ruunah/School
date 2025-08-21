@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://566qurlr84j7"]
+
+[ext_resource type="Script" uid="uid://dvv6hypk3rdef" path="res://Scripts/checker.gd" id="1_f5qnm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ploik"]
+size = Vector2(64, 16)
+
+[node name="Checker" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_f5qnm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4.76837e-07)
+shape = SubResource("RectangleShape2D_ploik")

@@ -1,6 +1,9 @@
-res://Prefabs/pipe.tscn
-res://Scripts/pipe.gd
 res://Scenes/main.tscn
-res://Scripts/spawner.gd
 res://Prefabs/player.tscn
+res://Prefabs/pipe.tscn
 res://Scripts/player.gd
+res://Scripts/pipe.gd
+res://Scripts/spawner.gd
+res://Prefabs/checker.tscn
+res://Prefabs/Checker.tscn
+res://Scripts/checker.gd

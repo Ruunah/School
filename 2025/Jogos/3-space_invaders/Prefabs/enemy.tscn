@@ -133,13 +133,13 @@ script = ExtResource("2_lgw76")
 shape = SubResource("RectangleShape2D_lgw76")
 
 [node name="ShipRed" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(6.55651e-07, 0)
 scale = Vector2(0.941176, 1)
 texture = ExtResource("1_leowk")
 flip_v = true
 
 [node name="Explosion" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-7.15256e-07, 9.53674e-07)
 scale = Vector2(0.969697, 1)
 texture = ExtResource("3_t4g6b")
