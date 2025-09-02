@@ -1,3 +1,7 @@
+ParallaxLayer
+Parallax2D
+ParallaxBackground
+RichTextLabel
 CollisionShape2D
 CharacterBody2D
 Area2D

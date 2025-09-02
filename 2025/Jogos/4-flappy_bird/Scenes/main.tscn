@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cv6iddgdgi0c5"]
+[gd_scene load_steps=8 format=3 uid="uid://cv6iddgdgi0c5"]
 
+[ext_resource type="Script" uid="uid://bq6e1joq1brqw" path="res://Scripts/main.gd" id="1_8gbba"]
 [ext_resource type="PackedScene" uid="uid://csejmfx82545y" path="res://Prefabs/player.tscn" id="1_jjgbg"]
-[ext_resource type="Script" uid="uid://bb4h5ifjl6b0e" path="res://Scripts/spawner.gd" id="3_8gbba"]
+[ext_resource type="Texture2D" uid="uid://dxcvatgy4h72e" path="res://Sprites/bg001.png" id="3_8gbba"]
+[ext_resource type="Script" uid="uid://b612yvyrkj8rh" path="res://Scripts/parallax_background.gd" id="3_jjvhh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bo1nx"]
 size = Vector2(1160, 16)
@@ -13,15 +15,29 @@ size = Vector2(1168, 16)
 size = Vector2(16, 666)
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_8gbba")
 
-[node name="Spawner" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 1216.0
-offset_top = 320.0
-offset_right = 1216.0
-offset_bottom = 320.0
-script = ExtResource("3_8gbba")
+[node name="Timer2" type="RichTextLabel" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+z_index = 1000
+offset_left = 384.0
+offset_top = 32.0
+offset_right = 768.0
+offset_bottom = 96.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+horizontal_alignment = 1
+
+[node name="Score" type="RichTextLabel" parent="."]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+z_index = 1000
+offset_left = 512.0
+offset_top = 128.0
+offset_right = 640.0
+offset_bottom = 192.0
+horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
@@ -48,3 +64,29 @@ shape = SubResource("RectangleShape2D_jjvhh")
 position = Vector2(144, 344)
 collision_layer = 5
 collision_mask = 5
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("3_jjvhh")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(871, 0)
+
+[node name="Bg001" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(436, 324)
+scale = Vector2(0.963536, 0.921764)
+texture = ExtResource("3_8gbba")
+
+[node name="Bg002" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(2178, 324)
+scale = Vector2(0.976796, 0.921764)
+texture = ExtResource("3_8gbba")
+
+[node name="Bg003" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(3923.87, 324)
+scale = Vector2(0.963252, 0.921764)
+texture = ExtResource("3_8gbba")
+
+[node name="Bg004" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(5669, 324)
+scale = Vector2(0.983425, 0.921764)
+texture = ExtResource("3_8gbba")
