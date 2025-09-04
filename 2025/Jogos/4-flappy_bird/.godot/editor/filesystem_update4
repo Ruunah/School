@@ -1,9 +1,8 @@
 res://Scenes/main.tscn
-res://Scripts/checker.gd
-res://Scripts/spawner.gd
-res://Prefabs/Checker.tscn
-res://Prefabs/player.tscn
 res://Scripts/player.gd
-res://Scripts/pipe.gd
+res://Scenes/menu.tscn
+res://Scripts/menu.gd
 res://Scripts/main.gd
-res://Scripts/parallax_background.gd
+res://Prefabs/player.tscn
+res://Scripts/saver.gd
+res://Scripts/saveIO.gd

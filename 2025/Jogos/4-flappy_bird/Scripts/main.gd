@@ -57,3 +57,4 @@ func _process(delta):
 			check.position = Vector2(1216, checky)
 			
 			$"Timer".start()
+			
