@@ -6,7 +6,7 @@ func flipV():
 	rotation_degrees=180
 
 func _physics_process(_delta):
-	if not $"../main".dead:
+	if not get_parent().dead:
 		velocity.x = -SPEED
 		move_and_slide()
 		if get_slide_collision_count()>0:

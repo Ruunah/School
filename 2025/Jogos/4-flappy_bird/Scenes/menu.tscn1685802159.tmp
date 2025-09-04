@@ -1,0 +1,146 @@
+[gd_scene load_steps=4 format=3 uid="uid://bw5dm20u4t1yg"]
+
+[ext_resource type="Texture2D" uid="uid://dxcvatgy4h72e" path="res://Sprites/bg001.png" id="1_1rerr"]
+[ext_resource type="Script" uid="uid://53j0iqxlonb8" path="res://Scripts/menu.gd" id="1_xhh6f"]
+[ext_resource type="Script" uid="uid://dbpyf0uke0gdr" path="res://Scripts/saveIO.gd" id="2_cayip"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_xhh6f")
+
+[node name="Bg" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(1.27293, 0.921764)
+texture = ExtResource("1_1rerr")
+
+[node name="SaveIO" type="Node" parent="."]
+script = ExtResource("2_cayip")
+
+[node name="Normal" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Normal"]
+offset_left = 304.0
+offset_top = 64.0
+offset_right = 846.0
+offset_bottom = 201.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Flappy Bird"
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="RichTextLabel" parent="Normal"]
+offset_left = 320.0
+offset_top = 216.0
+offset_right = 832.0
+offset_bottom = 360.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/bold_italics_font_size = 100
+theme_override_font_sizes/italics_font_size = 100
+theme_override_font_sizes/mono_font_size = 100
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 100
+text = "High Score:
+Last Score:"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="P2B" type="Button" parent="Normal"]
+offset_left = 480.0
+offset_top = 376.0
+offset_right = 672.0
+offset_bottom = 440.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Play again"
+
+[node name="Quit" type="Button" parent="Normal"]
+offset_left = 480.0
+offset_top = 480.0
+offset_right = 672.0
+offset_bottom = 544.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Exit"
+
+[node name="Dead" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Dead"]
+offset_left = 304.0
+offset_top = 64.0
+offset_right = 846.0
+offset_bottom = 201.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "You Died"
+horizontal_alignment = 1
+
+[node name="ScoreLabel" type="RichTextLabel" parent="Dead"]
+offset_left = 320.0
+offset_top = 216.0
+offset_right = 832.0
+offset_bottom = 360.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/bold_italics_font_size = 100
+theme_override_font_sizes/italics_font_size = 100
+theme_override_font_sizes/mono_font_size = 100
+theme_override_font_sizes/normal_font_size = 50
+theme_override_font_sizes/bold_font_size = 100
+text = "High Score:
+Last Score:"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="P2B" type="Button" parent="Dead"]
+offset_left = 256.0
+offset_top = 448.0
+offset_right = 448.0
+offset_bottom = 512.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Play again"
+
+[node name="Quit" type="Button" parent="Dead"]
+offset_left = 704.0
+offset_top = 448.0
+offset_right = 896.0
+offset_bottom = 512.0
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Exit"
+
+[connection signal="pressed" from="Normal/P2B" to="." method="play"]
+[connection signal="pressed" from="Normal/Quit" to="." method="quit"]
+[connection signal="pressed" from="Dead/P2B" to="." method="play"]
+[connection signal="pressed" from="Dead/Quit" to="." method="quit"]

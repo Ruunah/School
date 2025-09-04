@@ -17,26 +17,16 @@ size = Vector2(16, 666)
 [node name="main" type="Node2D"]
 script = ExtResource("1_8gbba")
 
-[node name="Timer2" type="RichTextLabel" parent="."]
-modulate = Color(0, 0, 0, 1)
-self_modulate = Color(0, 0, 0, 1)
-z_index = 1000
-offset_left = 384.0
-offset_top = 32.0
-offset_right = 768.0
-offset_bottom = 96.0
-size_flags_horizontal = 0
-size_flags_vertical = 0
-horizontal_alignment = 1
-
 [node name="Score" type="RichTextLabel" parent="."]
 modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 z_index = 1000
-offset_left = 512.0
-offset_top = 128.0
-offset_right = 640.0
-offset_bottom = 192.0
+offset_left = 448.0
+offset_top = 64.0
+offset_right = 704.0
+offset_bottom = 160.0
+theme_override_font_sizes/normal_font_size = 50
+text = "0000"
 horizontal_alignment = 1
 
 [node name="Timer" type="Timer" parent="."]
@@ -90,3 +80,7 @@ texture = ExtResource("3_8gbba")
 position = Vector2(5669, 324)
 scale = Vector2(0.983425, 0.921764)
 texture = ExtResource("3_8gbba")
+
+[node name="Timer" type="Timer" parent="ParallaxBackground"]
+wait_time = 40.0
+one_shot = true

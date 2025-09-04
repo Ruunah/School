@@ -30,11 +30,9 @@ func newpipe():
 	ret=[pipe1, pipe2, checky, check0]
 	return ret 
 
-func _process(delta):
+func _process(_delta):
 	if not dead:
 		$Score.text=str($Player.Score)
-		elapsed_time+=delta
-		$Timer2.text=str(float(int(elapsed_time*10))/10)
 		if $"Timer".is_stopped():
 			var ret = newpipe()
 			pipe1 = ret[0]
@@ -43,16 +41,16 @@ func _process(delta):
 			check0 = ret[3]
 			
 			var top = prefab.instantiate()
-			get_tree().get_root().add_child(top)
+			add_child(top)
 			top.position = Vector2(1216, pipe1)
 			
 			var bottom = prefab.instantiate()
-			get_tree().get_root().add_child(bottom)
+			add_child(bottom)
 			bottom.position = Vector2(1216, pipe2)
 			bottom.flipV()
 			
 			var check = prefeb.instantiate()
-			get_tree().get_root().add_child(check)
+			add_child(check)
 			check.scale = Vector2(1, check0)
 			check.position = Vector2(1216, checky)
 			

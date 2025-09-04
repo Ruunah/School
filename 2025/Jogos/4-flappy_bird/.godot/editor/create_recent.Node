@@ -1,3 +1,6 @@
+Control
+CharacterBody2D
+Node
 Button
 RichTextLabel
 Label
@@ -5,8 +8,6 @@ ParallaxLayer
 Parallax2D
 ParallaxBackground
 CollisionShape2D
-CharacterBody2D
 Area2D
 Timer
-Control
 AnimationPlayer
