@@ -1,8 +1,12 @@
-res://Scenes/main.tscn
-res://Scripts/player.gd
 res://Scenes/menu.tscn
+res://Scripts/player.gd
 res://Scripts/menu.gd
-res://Scripts/main.gd
 res://Prefabs/player.tscn
-res://Scripts/saver.gd
 res://Scripts/saveIO.gd
+res://Scenes/main.tscn
+res://Scripts/main.gd
+res://Scripts/parallax_background.gd
+res://Prefabs/pipe.tscn
+res://Scripts/pipe.gd
+res://Prefabs/Checker.tscn
+res://Scripts/checker.gd
