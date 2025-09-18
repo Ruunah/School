@@ -28,6 +28,7 @@ offset_bottom = 40.0
 script = ExtResource("2_cayip")
 
 [node name="Main_Text" type="Label" parent="menu"]
+layout_mode = 0
 offset_left = 304.0
 offset_top = 64.0
 offset_right = 846.0
@@ -38,6 +39,7 @@ text = "Flappy Bird"
 horizontal_alignment = 1
 
 [node name="Secondary_Text" type="RichTextLabel" parent="menu"]
+layout_mode = 0
 offset_left = 320.0
 offset_top = 216.0
 offset_right = 832.0
@@ -52,6 +54,7 @@ scroll_active = false
 horizontal_alignment = 1
 
 [node name="Button1" type="Button" parent="menu"]
+layout_mode = 0
 offset_left = 480.0
 offset_top = 376.0
 offset_right = 672.0
@@ -67,6 +70,7 @@ theme_override_font_sizes/font_size = 25
 text = "Play"
 
 [node name="Button2" type="Button" parent="menu"]
+layout_mode = 0
 offset_left = 480.0
 offset_top = 480.0
 offset_right = 672.0
